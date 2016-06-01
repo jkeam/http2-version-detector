@@ -1,0 +1,14 @@
+{
+  "name": "http2-version-detector",
+  "version": "1.0.0",
+  "description": "Detects verison of node established to a given website using curl",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository" : { 
+    "type" : "git", "url" : "git@github.com:jkeam/http2-version-detector.git"
+  },
+  "author": "Jonathan Keam <jpkeam@gmail.com> (jonkeam.com)",
+  "license": "MIT"
+}
