@@ -5,6 +5,10 @@ const DEBUG = false;
 
 handleRequest = (request, response) => {
   const website = url.parse(request.url, true).query['website'];
+  if (!website) {
+    response.end('{error: "Missing website"}');
+    return;
+  }
 
   const methods = [];
   const spawn = require('child_process').spawn;
@@ -26,7 +30,8 @@ handleRequest = (request, response) => {
     if (DEBUG) {
       console.log(`child process exited with code ${code} on ${new Date()}`);
     }
-    response.end(JSON.stringify(methods));
+    response.end(JSON.stringify({methods}));
+    return;
   });
 };
 
